@@ -2,6 +2,8 @@ import photoSf from '@/assets/sf.jpeg';
 import photoMountains from '@/assets/ny.jpeg';
 import photoNyc from '@/assets/gc.jpeg';
 import photoPr from '@/assets/pr.jpeg';
+import photofg from '@/assets/fg.jpeg';
+import photogc2 from '@/assets/gc2.jpeg';
 
 interface Photo {
   src: string;
@@ -29,7 +31,18 @@ const photos: Photo[] = [
     src: photoPr,
     caption: 'prescott, Az',
     date: '07/25',
+  },
+  {
+    src: photofg,
+    caption: 'flagstaff, Az',
+    date: '09/24',
+  },
+  {
+    src: photogc2,
+    caption: 'grand canyon, Az',
+    date: '09/24',
   }
+
 ];
 
 const PhotosSection = () => {
