@@ -22,28 +22,36 @@ const HeroSection = () => {
       </div>
 
       {/* Profile image centered with coming soon placeholders */}
-      <div className="relative flex justify-center items-center gap-10 mb-16">
-        {/* Mobile: small squares */}
-        <div className="flex md:hidden flex-col gap-3 absolute left-4 top-1/2 -translate-y-1/2">
+      <div className="relative flex flex-col md:flex-row justify-center items-center gap-10 mb-16">
+        {/* Mobile: small squares (stacked, non-overlapping) */}
+        <div className="flex md:hidden flex-col gap-3 mb-6 w-full items-center">
           {Array.from({ length: 3 }).map((_, i) => (
             <div
               key={i}
-              className="w-14 h-14 rounded-lg bg-black/90 border border-primary/40 transition-transform duration-200 hover:scale-110 active:scale-100"
-            />
+              className="w-full max-w-[240px] h-14 rounded-xl border border-white/12 bg-gradient-to-br from-black via-zinc-900 to-black text-primary-foreground shadow-[0_10px_20px_-18px_rgba(0,0,0,0.8)] transition-transform duration-200 ease-out hover:scale-105 active:scale-105 overflow-hidden"
+            >
+              <div className="h-full w-full flex items-center justify-between px-3 text-[10px] font-mono uppercase tracking-[0.12em]">
+                <span>coming soon</span>
+                <span className="text-xs text-accent">0{i + 1}</span>
+              </div>
+              <div className="mt-0.5 h-[2px] w-full bg-white/10 opacity-60 rounded-sm transition-all duration-200 hover:h-2.5" />
+            </div>
           ))}
         </div>
 
         {/* Desktop: styled cards */}
         <div className="hidden md:flex flex-col gap-4 animate-fade-up stagger-1 absolute left-0 -translate-x-6 w-64">
-          {['ok', 'coming soon', 'seriously—something is coming'].map((text, i) => (
+          {['something called... Hercules', 'coming soon', "something, haven't thought abt it"].map((text, i) => (
             <div
               key={i}
-              className="project-card bg-gradient-to-br from-black via-zinc-950 to-black text-primary-foreground/90 rounded-xl shadow-[0_18px_38px_-16px_rgba(0,0,0,0.9)] transition-transform duration-200 hover:scale-102 active:scale-100"
+              className="project-card bg-black text-primary-foreground rounded-xl overflow-hidden transition-transform duration-300 ease-out hover:scale-[1.03] active:scale-[1.03] border border-white/10 shadow-[0_18px_38px_-16px_rgba(0,0,0,0.9)]"
             >
+              <div className="flex items-center justify-between text-xs font-mono uppercase tracking-[0.14em] text-accent mb-2">
+                <span>coming soon</span>
+                <span>0{i + 1}</span>
+              </div>
               <p className="font-display text-lg leading-tight">{text}</p>
-              <p className="font-mono text-xs text-muted-foreground mt-2 uppercase tracking-[0.18em]">
-                placeholder
-              </p>
+              <div className="mt-3 h-16 w-full bg-gradient-to-r from-white/5 via-white/2 to-white/5 opacity-60 rounded-md border border-white/10 transition-all duration-300 hover:opacity-90 hover:h-20" />
             </div>
           ))}
         </div>

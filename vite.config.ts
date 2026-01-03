@@ -8,6 +8,15 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    // Improve HMR reliability on Windows/WSL/networked filesystems
+    watch: {
+      usePolling: true,
+      interval: 100,
+    },
+    hmr: {
+      host: "localhost",
+      port: 8080,
+    },
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {

@@ -3,16 +3,35 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
+const FORM_ENDPOINT = 'https://formspree.io/f/xeeorrpv';
+
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     email: '',
     message: '',
   });
+  const [submitting, setSubmitting] = useState(false);
+  const [status, setStatus] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    setStatus(null);
+    setSubmitting(true);
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error('Failed to send');
+      setStatus('sent');
+      setFormData({ email: '', message: '' });
+    } catch (err) {
+      console.error(err);
+      setStatus('error');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -41,10 +60,17 @@ const ContactSection = () => {
           <Button
             type="submit"
             variant="outline"
-            className="w-full bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-mono"
+            className="w-full bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-mono disabled:opacity-60"
+            disabled={submitting}
           >
-            Send Message
+            {submitting ? 'Sending...' : 'Send Message'}
           </Button>
+          {status === 'sent' && (
+            <p className="text-sm font-mono text-accent">Thanks! Message sent.</p>
+          )}
+          {status === 'error' && (
+            <p className="text-sm font-mono text-destructive">Could not send. Try again.</p>
+          )}
         </form>
 
         <div className="mt-16 space-y-3 font-mono text-sm text-primary-foreground/80">
