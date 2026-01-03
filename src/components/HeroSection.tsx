@@ -3,7 +3,8 @@ import Typewriter from './Typewriter';
 
 const HeroSection = () => {
   return (
-    <section id="home" className="min-h-screen pt-20 px-6 md:px-12">
+    <section id="home" className="relative overflow-hidden min-h-screen pt-20 px-6 md:px-12">
+      <div className="grain-overlay" />
       {/* Top bar with info and name */}
       <div className="flex flex-col md:flex-row items-start justify-between gap-8 mb-12">
         <div className="font-mono text-sm opacity-80">
@@ -20,8 +21,18 @@ const HeroSection = () => {
         </h1>
       </div>
 
-      {/* Profile image centered */}
-      <div className="flex justify-center mb-16">
+      {/* Profile image centered with coming soon placeholders */}
+      <div className="relative flex justify-center items-center gap-10 mb-16">
+        <div className="hidden md:flex flex-col gap-6 animate-fade-up stagger-1 absolute left-0 -translate-x-6">
+          {Array.from({ length: 3 }).map((_, i) => (
+            <div
+              key={i}
+              className="w-56 h-24 rounded-2xl border border-primary/40 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 text-primary-foreground/90 backdrop-blur-sm flex items-center justify-center text-base md:text-lg font-mono uppercase tracking-[0.2em] shadow-[0_18px_38px_-16px_rgba(0,0,0,0.9)]"
+            >
+              coming soon
+            </div>
+          ))}
+        </div>
         <div className="w-56 h-72 md:w-72 md:h-96 overflow-hidden animate-fade-up stagger-1">
           <img
             src={profileImage}

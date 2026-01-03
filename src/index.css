@@ -140,6 +140,19 @@
   .status-dot {
     @apply w-2 h-2 rounded-full bg-accent animate-pulse;
   }
+
+  .grain-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(rgba(0,0,0,0.12) 1px, transparent 0),
+      radial-gradient(rgba(0,0,0,0.06) 1px, transparent 0);
+    background-size: 90px 90px, 130px 130px;
+    background-position: 0 0, 45px 30px;
+    mix-blend-mode: multiply;
+    opacity: 0.18;
+  }
 }
 
 @layer utilities {

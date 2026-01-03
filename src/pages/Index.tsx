@@ -4,6 +4,7 @@ import AboutSection from '@/components/AboutSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import PhotosSection from '@/components/PhotosSection';
 import ContactSection from '@/components/ContactSection';
+import PixelGrid from '@/components/PixelGrid';
 
 const Index = () => {
   return (
@@ -12,6 +13,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <AboutSection />
+        <PixelGrid />
         <ProjectsSection />
         <PhotosSection />
         <ContactSection />
