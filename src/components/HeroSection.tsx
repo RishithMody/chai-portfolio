@@ -28,13 +28,18 @@ const HeroSection = () => {
           {Array.from({ length: 3 }).map((_, i) => (
             <div
               key={i}
-              className="w-full max-w-[240px] h-14 rounded-xl border border-white/12 bg-gradient-to-br from-black via-zinc-900 to-black text-primary-foreground shadow-[0_10px_20px_-18px_rgba(0,0,0,0.8)] transition-transform duration-200 ease-out hover:scale-105 active:scale-105 overflow-hidden"
+              className="w-full max-w-[300px] h-18 rounded-xl border border-white/12 bg-gradient-to-br from-black via-zinc-900 to-black text-primary-foreground shadow-[0_10px_20px_-18px_rgba(0,0,0,0.8)] transition-all duration-200 ease-out hover:scale-105 active:scale-105 overflow-hidden"
             >
-              <div className="h-full w-full flex items-center justify-between px-3 text-[10px] font-mono uppercase tracking-[0.12em]">
-                <span>coming soon</span>
-                <span className="text-xs text-accent">0{i + 1}</span>
-              </div>
-              <div className="mt-0.5 h-[2px] w-full bg-white/10 opacity-60 rounded-sm transition-all duration-200 hover:h-2.5" />
+              <details className="h-full w-full group open:h-auto transition-all duration-200">
+                <summary className="h-16 w-full list-none flex items-center justify-between px-3 text-[11px] font-mono uppercase tracking-[0.12em] cursor-pointer">
+                  <span className="text-center flex-1">coming soon</span>
+                  <span className="text-xs text-accent">0{i + 1}</span>
+                  <span className="text-xs text-muted-foreground group-open:rotate-180 transition-transform ml-2">▾</span>
+                </summary>
+                <div className="px-3 pb-3 text-center text-[11px] font-display leading-snug">
+                  {['something called... Hercules', 'coming soon', "something, haven't thought abt it"][i]}
+                </div>
+              </details>
             </div>
           ))}
         </div>
@@ -44,14 +49,13 @@ const HeroSection = () => {
           {['something called... Hercules', 'coming soon', "something, haven't thought abt it"].map((text, i) => (
             <div
               key={i}
-              className="project-card bg-black text-primary-foreground rounded-xl overflow-hidden transition-transform duration-300 ease-out hover:scale-[1.03] active:scale-[1.03] border border-white/10 shadow-[0_18px_38px_-16px_rgba(0,0,0,0.9)]"
+              className="project-card bg-black text-primary-foreground rounded-xl overflow-hidden transition-transform duration-300 ease-out hover:scale-[1.03] active:scale-[1.03] border border-white/10 shadow-[0_18px_38px_-16px_rgba(0,0,0,0.9)] px-5 py-4"
             >
               <div className="flex items-center justify-between text-xs font-mono uppercase tracking-[0.14em] text-accent mb-2">
                 <span>coming soon</span>
                 <span>0{i + 1}</span>
               </div>
-              <p className="font-display text-lg leading-tight">{text}</p>
-              <div className="mt-3 h-16 w-full bg-gradient-to-r from-white/5 via-white/2 to-white/5 opacity-60 rounded-md border border-white/10 transition-all duration-300 hover:opacity-90 hover:h-20" />
+              <p className="font-display text-lg leading-tight text-center">{text}</p>
             </div>
           ))}
         </div>
