@@ -82,7 +82,7 @@ const HeroSection = () => {
           />
         </p>
         <p className="text-lg md:text-xl font-display">
-          optimizing AI/vision inference, RAG pipelines, and systems performance
+          optimizing AI/vision inference, decode pipelines, and systems performance
         </p>
         <div className="pt-8">
           <span className="status-badge">
