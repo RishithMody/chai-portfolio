@@ -23,13 +23,27 @@ const HeroSection = () => {
 
       {/* Profile image centered with coming soon placeholders */}
       <div className="relative flex justify-center items-center gap-10 mb-16">
-        <div className="hidden md:flex flex-col gap-6 animate-fade-up stagger-1 absolute left-0 -translate-x-6">
+        {/* Mobile: small squares */}
+        <div className="flex md:hidden flex-col gap-3 absolute left-4 top-1/2 -translate-y-1/2">
           {Array.from({ length: 3 }).map((_, i) => (
             <div
               key={i}
-              className="w-56 h-24 rounded-2xl border border-primary/40 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 text-primary-foreground/90 backdrop-blur-sm flex items-center justify-center text-base md:text-lg font-mono uppercase tracking-[0.2em] shadow-[0_18px_38px_-16px_rgba(0,0,0,0.9)]"
+              className="w-14 h-14 rounded-lg bg-black/90 border border-primary/40 transition-transform duration-200 hover:scale-110 active:scale-100"
+            />
+          ))}
+        </div>
+
+        {/* Desktop: styled cards */}
+        <div className="hidden md:flex flex-col gap-4 animate-fade-up stagger-1 absolute left-0 -translate-x-6 w-64">
+          {['ok', 'coming soon', 'seriously—something is coming'].map((text, i) => (
+            <div
+              key={i}
+              className="project-card bg-gradient-to-br from-black via-zinc-950 to-black text-primary-foreground/90 rounded-xl shadow-[0_18px_38px_-16px_rgba(0,0,0,0.9)] transition-transform duration-200 hover:scale-102 active:scale-100"
             >
-              coming soon
+              <p className="font-display text-lg leading-tight">{text}</p>
+              <p className="font-mono text-xs text-muted-foreground mt-2 uppercase tracking-[0.18em]">
+                placeholder
+              </p>
             </div>
           ))}
         </div>
