@@ -1,6 +1,6 @@
-import photoSf from '@/assets/photo-sf.jpg';
-import photoMountains from '@/assets/photo-mountains.jpg';
-import photoNyc from '@/assets/photo-nyc.jpg';
+import photoSf from '@/assets/sf.jpeg';
+import photoMountains from '@/assets/ny.jpeg';
+import photoNyc from '@/assets/gc.jpeg';
 
 interface Photo {
   src: string;
@@ -11,31 +11,31 @@ interface Photo {
 const photos: Photo[] = [
   {
     src: photoMountains,
-    caption: 'leh, india',
-    date: '05/23',
+    caption: 'NYC',
+    date: '07/19',
   },
   {
     src: photoNyc,
-    caption: 'new york',
-    date: '05/25',
+    caption: 'Horse Shoe',
+    date: '04/24',
   },
   {
     src: photoSf,
-    caption: 'golden gate',
-    date: '12/23',
+    caption: 'sf',
+    date: '10/23',
   },
 ];
 
 const PhotosSection = () => {
   return (
-    <section id="snaps" className="py-24">
-      <div className="grid md:grid-cols-3 gap-0">
+    <section id="snaps" className="py-24 px-6 md:px-12">
+      <div className="grid md:grid-cols-3 gap-6">
         {photos.map((photo, index) => (
-          <div key={index} className="relative group overflow-hidden">
+          <div key={index} className="relative group overflow-hidden aspect-[3/4] rounded-xl">
             <img
               src={photo.src}
               alt={photo.caption}
-              className="w-full h-[50vh] object-cover transition-transform duration-700 group-hover:scale-105"
+              className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="absolute bottom-6 left-6 right-6">

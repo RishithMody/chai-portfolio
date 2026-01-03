@@ -19,7 +19,7 @@ const ContactSection = () => {
     <section id="contact" className="section-dark py-24 px-6 md:px-12">
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="text-section-title mb-12">
-          I'm bored, let's talk.
+          Let's build something great.
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -47,11 +47,23 @@ const ContactSection = () => {
           </Button>
         </form>
 
-        <div className="mt-16 flex justify-center gap-8 font-mono text-sm text-primary-foreground/70">
-          <a href="#" className="hover:text-accent transition-colors">Twitter</a>
-          <a href="#" className="hover:text-accent transition-colors">GitHub</a>
-          <a href="#" className="hover:text-accent transition-colors">LinkedIn</a>
-          <a href="#" className="hover:text-accent transition-colors">Medium</a>
+        <div className="mt-16 space-y-3 font-mono text-sm text-primary-foreground/80">
+          <div className="flex justify-center gap-3">
+            <span className="text-primary-foreground/60">email</span>
+            <a href="mailto:rishithmody@gmail.com" className="hover:text-accent transition-colors">rishithmody@gmail.com</a>
+          </div>
+          <div className="flex justify-center gap-3">
+            <span className="text-primary-foreground/60">phone</span>
+            <a href="tel:+16025459288" className="hover:text-accent transition-colors">+1 (602) 545-9288</a>
+          </div>
+          <div className="flex justify-center gap-3">
+            <span className="text-primary-foreground/60">linkedin</span>
+            <a href="https://linkedin.com/in/rishith-mody-9a481a248" className="hover:text-accent transition-colors">linkedin.com/in/rishith-mody-9a481a248</a>
+          </div>
+          <div className="flex justify-center gap-3">
+            <span className="text-primary-foreground/60">resume</span>
+            <a href="/RishithModyResume-internal.pdf" className="hover:text-accent transition-colors">RishithModyResume-internal.pdf</a>
+          </div>
         </div>
       </div>
     </section>

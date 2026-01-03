@@ -9,27 +9,27 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'CodeSync',
-    award: 'winner at Harvard',
-    venue: 'HackHarvard 2024',
+    title: 'AeroDocs',
+    award: 'RAG knowledge base & VPC for Honeywell',
+    venue: 'Next.js, TypeScript, Python, Ollama LLaMA 3.2, YOLOv8',
     link: '#',
   },
   {
-    title: 'NeuralDocs',
-    award: 'winner at Stanford',
-    venue: 'TreeHacks 2024',
+    title: 'Object Detecting Vest',
+    award: 'Assistive computer vision vest for the visually impaired',
+    venue: 'Python, Raspberry Pi, mobile companion app',
     link: '#',
   },
   {
-    title: 'ChainVote',
-    award: 'winner at Princeton',
-    venue: 'HackPrinceton 2023',
+    title: "Schrodinger's AI",
+    award: 'Hallucination-resistant chatbot with factual verification',
+    venue: 'Next.js, Node.js, MongoDB, AWS, Vercel, Docker',
     link: '#',
   },
   {
-    title: 'HealthAI',
-    award: 'winner at MIT',
-    venue: 'HackMIT 2023',
+    title: 'Orbit',
+    award: 'Real-time travel planning with live flight/booking data',
+    venue: 'React, TypeScript, Gemini 1.5 Flash, FlightLabs API',
     link: '#',
   },
 ];
@@ -38,7 +38,7 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-24 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-section-title mb-4">i love hackathons</h2>
+        <h2 className="text-section-title mb-4">featured projects</h2>
         <p className="font-mono text-muted-foreground mb-12">what i've built</p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

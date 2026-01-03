@@ -1,4 +1,4 @@
-import profileImage from '@/assets/profile-hero.jpg';
+import profileImage from '@/assets/41AF9C30-2DB5-41A3-8853-D5558BF4AEA3.jpeg';
 
 const HeroSection = () => {
   return (
@@ -6,24 +6,22 @@ const HeroSection = () => {
       {/* Top bar with info and name */}
       <div className="flex flex-col md:flex-row items-start justify-between gap-8 mb-12">
         <div className="font-mono text-sm opacity-80">
-          <span>24</span>
+          <span>tempe, arizona</span>
           <span className="mx-2">•</span>
-          <span>san francisco</span>
+          <span>asu cs '27</span>
           <span className="mx-2">•</span>
-          <span>stanford</span>
-          <span className="mx-2">•</span>
-          <a href="mailto:hello@portfolio.dev" className="hover:text-accent transition-colors">
-            hello@portfolio.dev
+          <a href="mailto:rishithmody@gmail.com" className="hover:text-accent transition-colors">
+            rishithmody@gmail.com
           </a>
         </div>
         <h1 className="text-hero animate-fade-up">
-          ALEX CHEN
+          RISHITH MODY
         </h1>
       </div>
 
       {/* Profile image centered */}
       <div className="flex justify-center mb-16">
-        <div className="w-48 h-64 md:w-64 md:h-80 overflow-hidden animate-fade-up stagger-1">
+        <div className="w-56 h-72 md:w-72 md:h-96 overflow-hidden animate-fade-up stagger-1">
           <img
             src={profileImage}
             alt="Profile"
@@ -35,19 +33,21 @@ const HeroSection = () => {
       {/* Current work */}
       <div className="text-center space-y-4 animate-fade-up stagger-2">
         <p className="text-xl md:text-2xl font-display">
-          building AI developer tools @ <span className="font-semibold">Nexus Labs (YC25)</span>
+          benchmark performance intern @ <span className="font-semibold">Intel</span>
         </p>
         <p className="text-lg md:text-xl font-display">
           &
         </p>
         <p className="text-xl md:text-2xl font-display">
-          building <a href="#" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-3 py-1 hover:bg-accent hover:text-accent-foreground transition-colors">Horizon.ai ↗</a>
+          cs @ <span className="font-semibold">Arizona State University</span> · GPA 3.95
         </p>
-        
+        <p className="text-lg md:text-xl font-display">
+          optimizing AI/vision inference, RAG pipelines, and systems performance
+        </p>
         <div className="pt-8">
           <span className="status-badge">
             <span className="status-dot"></span>
-            open to work
+            open to internships & new grad swe/ai roles
           </span>
         </div>
       </div>

@@ -1,21 +1,31 @@
 import Typewriter from './Typewriter';
 
 const skills = [
-  'i code',
-  'i blog',
-  'i design',
-  'i photograph',
-  'i play soccer',
-  'i travel',
-  "that's life",
+  'i benchmark cpus/gpus',
+  'i optimize ai inference',
+  'i build rag pipelines',
+  'i ship full-stack apps',
+  'i tune models & tokenizers',
+  'i deploy to aws/azure',
+  'i love hackathons',
 ];
 
 const experiences = [
-  { company: 'Google', role: 'Software Engineer Intern' },
-  { company: 'Meta', role: 'Full Stack Developer' },
-  { company: 'Stanford', role: 'Research Assistant' },
-  { company: 'Y Combinator', role: 'Startup Founder' },
-  { company: 'AWS', role: 'Solutions Architect Intern' },
+  { 
+    company: 'Intel Corporation', 
+    role: 'Benchmark Performance Intern (May 2025 - Present)',
+    description: 'Built benchmarking pipelines for CPUs/GPUs/AI accelerators using GStreamer, OpenCV, ONNX Runtime, PyTorch, and TensorRT; optimized inference via quantization (FP32/BF16/INT8) and vLLM/AMD Quark; performed real-time system analysis with rt-tests and tuning patches.',
+  },
+  { 
+    company: 'VOVANCE Ltd', 
+    role: 'Software Developer (May 2024 - Aug 2024)',
+    description: 'Developed RAG pipelines with LangChain + FAISS; improved tokenizer/preprocessing to boost accuracy; shipped scalable backends with FastAPI/Express and optimized SQL/async to raise throughput; contributed reviews and documentation.',
+  },
+  { 
+    company: 'ASU - Ask A Biologist', 
+    role: 'Software Developer (Sep 2024 - Dec 2024)',
+    description: 'Built a custom crawler to migrate legacy content to Drupal; optimized migration scripts for accuracy and minimal downtime while collaborating across teams to enhance functionality and UX.',
+  },
 ];
 
 const AboutSection = () => {
@@ -55,15 +65,25 @@ const AboutSection = () => {
               >
                 <h3 className="font-display font-semibold">{exp.company}</h3>
                 <p className="font-mono text-sm text-muted-foreground">{exp.role}</p>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{exp.description}</p>
               </div>
             ))}
           </div>
-          <a
-            href="#"
-            className="font-mono text-sm underline underline-offset-4 hover:text-accent transition-colors"
-          >
-            my resume →
-          </a>
+          <div className="flex flex-wrap items-center gap-4 font-mono text-sm">
+            <a
+              href="https://linkedin.com/in/rishith-mody-9a481a248"
+              className="underline underline-offset-4 hover:text-accent transition-colors"
+            >
+              LinkedIn ↗
+            </a>
+            <span className="text-muted-foreground">/</span>
+            <a
+              href="/RishithModyResume-internal.pdf"
+              className="underline underline-offset-4 hover:text-accent transition-colors"
+            >
+              Resume (PDF)
+            </a>
+          </div>
         </div>
       </div>
     </section>
