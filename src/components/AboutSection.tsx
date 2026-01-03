@@ -35,7 +35,7 @@ const AboutSection = () => {
           <div>
             <h2 className="text-section-title mb-8">
               building<br />
-              <span className="accent-highlight">software at scale.</span>
+              <span className="accent-highlight">something.</span>
             </h2>
           </div>
           <div className="flex flex-col justify-center">
