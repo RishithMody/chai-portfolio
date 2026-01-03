@@ -3,10 +3,8 @@ import Typewriter from './Typewriter';
 const skills = [
   'i benchmark cpus/gpus',
   'i optimize ai inference',
-  'i build rag pipelines',
   'i ship full-stack apps',
   'i tune models & tokenizers',
-  'i deploy to aws/azure',
   'i love hackathons',
 ];
 

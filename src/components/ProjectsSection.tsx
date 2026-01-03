@@ -12,25 +12,25 @@ const projects: Project[] = [
     title: 'AeroDocs',
     award: 'RAG knowledge base & VPC for Honeywell',
     venue: 'Next.js, TypeScript, Python, Ollama LLaMA 3.2, YOLOv8',
-    link: '#',
+    link: 'https://github.com/FornaxChemica/aero_docs',
   },
   {
     title: 'Object Detecting Vest',
     award: 'Assistive computer vision vest for the visually impaired',
     venue: 'Python, Raspberry Pi, mobile companion app',
-    link: '#',
+    link: 'https://github.com/RishithMody/DetectionVest',
   },
   {
     title: "Schrodinger's AI",
     award: 'Hallucination-resistant chatbot with factual verification',
     venue: 'Next.js, Node.js, MongoDB, AWS, Vercel, Docker',
-    link: '#',
+    link: 'https://github.com/kevalshah14/Dash2025',
   },
   {
     title: 'Orbit',
     award: 'Real-time travel planning with live flight/booking data',
     venue: 'React, TypeScript, Gemini 1.5 Flash, FlightLabs API',
-    link: '#',
+    link: 'https://github.com/Diyac004/sunhacks-orbit/tree/frontend',
   },
 ];
 
