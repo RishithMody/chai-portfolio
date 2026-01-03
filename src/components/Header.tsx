@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm">
       <div className="flex items-center justify-between px-6 py-4 md:px-12">
-        <span className="font-display text-2xl font-bold">©2025</span>
+        <span className="font-display text-2xl font-bold">©2026</span>
         <nav className="hidden md:flex items-center gap-6">
           {navItems.map((item, index) => (
             <a
