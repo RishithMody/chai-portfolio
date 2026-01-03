@@ -1,3 +1,5 @@
+import Typewriter from './Typewriter';
+
 const skills = [
   'i code',
   'i blog',
@@ -29,16 +31,14 @@ const AboutSection = () => {
             </h2>
           </div>
           <div className="flex flex-col justify-center">
-            {skills.map((skill, index) => (
-              <p
-                key={skill}
-                className={`text-xl md:text-2xl font-display py-2 ${
-                  index % 2 === 1 ? 'accent-highlight' : ''
-                }`}
-              >
-                {skill}
-              </p>
-            ))}
+            <p className="text-3xl md:text-5xl font-display min-h-[60px]">
+              <Typewriter 
+                words={skills} 
+                typingSpeed={80} 
+                deletingSpeed={40} 
+                pauseDuration={1500} 
+              />
+            </p>
           </div>
         </div>
       </div>
