@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 
-const GRID_COLS = 14; // wider rectangle; tweak as you like
-const GRID_ROWS = 8;  // height of the rectangle
+const GRID_COLS = 21; // wider rectangle; tweak as you like
+const GRID_ROWS = 11;  // height of the rectangle
 const ACTIVE_COLOR = '#16a34a';
 const INACTIVE_COLOR = '#0b0b0f';
 const BORDER_COLOR = '#1f1f2a';
