@@ -1,7 +1,37 @@
+import { useState, type MouseEvent } from 'react';
 import profileImage from '@/assets/41AF9C30-2DB5-41A3-8853-D5558BF4AEA3.jpeg';
 import Typewriter from './Typewriter';
 
 const HeroSection = () => {
+  const [holoPos, setHoloPos] = useState({ x: 50, y: 50 });
+  const projectLinks = [
+    {
+      title: 'GitHub',
+      href: 'https://github.com/rishithmody',
+      tag: 'github',
+    },
+    {
+      title: 'Something called... Hercules',
+      subtitle: 'coming soon',
+      href: '#home',
+      tag: 'reach out',
+    },
+    {
+      title: 'cOMing S00n',
+      subtitle: 'coming soon',
+      href: '#home',
+    },
+  ];
+
+  const handleHoloMove = (e: MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    setHoloPos({ x, y });
+  };
+
+  const resetHolo = () => setHoloPos({ x: 50, y: 50 });
+
   return (
     <section id="home" className="relative overflow-hidden min-h-screen pt-20 px-6 md:px-12">
       <div className="grain-overlay" />
@@ -25,38 +55,43 @@ const HeroSection = () => {
       <div className="relative flex flex-col md:flex-row justify-center items-center gap-10 mb-16">
         {/* Mobile: small squares (stacked, non-overlapping) */}
         <div className="flex md:hidden flex-col gap-3 mb-6 w-full items-center">
-          {Array.from({ length: 3 }).map((_, i) => (
-            <div
-              key={i}
-              className="w-full max-w-[300px] h-18 rounded-xl border border-white/12 bg-gradient-to-br from-black via-zinc-900 to-black text-primary-foreground shadow-[0_10px_20px_-18px_rgba(0,0,0,0.8)] transition-all duration-200 ease-out hover:scale-105 active:scale-105 overflow-hidden"
+          {projectLinks.map((project, i) => (
+            <a
+              key={project.title}
+              href={project.href}
+              target={project.href.startsWith('http') ? '_blank' : undefined}
+              rel={project.href.startsWith('http') ? 'noreferrer' : undefined}
+              className="project-card w-full max-w-[320px] overflow-hidden transition-transform duration-200 ease-out hover:scale-105 active:scale-100 border-2 border-black shadow-[14px_14px_0_#0a0a0f]"
             >
-              <details className="h-full w-full group open:h-auto transition-all duration-200">
-                <summary className="h-16 w-full list-none flex items-center justify-between px-3 text-[11px] font-mono uppercase tracking-[0.12em] cursor-pointer">
-                  <span className="text-center flex-1">coming soon</span>
-                  <span className="text-xs text-accent">0{i + 1}</span>
-                  <span className="text-xs text-muted-foreground group-open:rotate-180 transition-transform ml-2">▾</span>
-                </summary>
-                <div className="px-3 pb-3 text-center text-[11px] font-display leading-snug">
-                  {['something called... Hercules', 'coming soon', "something, haven't thought abt it"][i]}
-                </div>
-              </details>
-            </div>
+              <div className="w-full flex flex-col items-center gap-2 px-3 py-3 text-sm font-display font-semibold text-center">
+                <span className="uppercase tracking-[0.16em] text-[12px]">{project.title}</span>
+                <span className="text-[12px] text-muted-foreground font-mono">{project.subtitle}</span>
+                <span className="px-2 py-1 text-[11px] uppercase tracking-[0.18em] border border-black bg-black text-white">
+                  {project.tag}
+                </span>
+              </div>
+            </a>
           ))}
         </div>
 
         {/* Desktop: styled cards */}
         <div className="hidden md:flex flex-col gap-4 animate-fade-up stagger-1 absolute left-0 -translate-x-6 w-64">
-          {['something called... Hercules', 'coming soon', "something, haven't thought abt it"].map((text, i) => (
-            <div
-              key={i}
-              className="project-card bg-black text-primary-foreground rounded-xl overflow-hidden transition-transform duration-300 ease-out hover:scale-[1.03] active:scale-[1.03] border border-white/10 shadow-[0_18px_38px_-16px_rgba(0,0,0,0.9)] px-5 py-4"
+          {projectLinks.map((project) => (
+            <a
+              key={project.title}
+              href={project.href}
+              target={project.href.startsWith('http') ? '_blank' : undefined}
+              rel={project.href.startsWith('http') ? 'noreferrer' : undefined}
+              className="project-card overflow-hidden transition-transform duration-300 ease-out hover:scale-[1.03] active:scale-[1.03] border-2 border-black shadow-[14px_14px_0_#0a0a0f]"
             >
-              <div className="flex items-center justify-between text-xs font-mono uppercase tracking-[0.14em] text-accent mb-2">
-                <span>coming soon</span>
-                <span>0{i + 1}</span>
+              <div className="p-4 space-y-2 text-center">
+                <h3 className="font-display text-lg font-semibold">{project.title}</h3>
+                <p className="font-mono text-xs text-muted-foreground font-semibold">{project.subtitle}</p>
+                <span className="inline-block px-2 py-1 text-[11px] uppercase tracking-[0.18em] border border-black bg-black text-white">
+                  {project.tag}
+                </span>
               </div>
-              <p className="font-display text-lg leading-tight text-center">{text}</p>
-            </div>
+            </a>
           ))}
         </div>
         <div className="w-56 h-72 md:w-72 md:h-96 overflow-hidden animate-fade-up stagger-1">
@@ -65,6 +100,53 @@ const HeroSection = () => {
             alt="Profile"
             className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
           />
+        </div>
+
+        {/* Swiss typography artwork */}
+        <div
+          className="hidden md:block absolute right-0 translate-x-4 top-6 w-72 animate-fade-up stagger-2"
+          aria-hidden="true"
+          onMouseMove={handleHoloMove}
+          onMouseLeave={resetHolo}
+        >
+          <div
+            className="relative overflow-hidden border-2 border-black bg-white shadow-[14px_14px_0_#0a0a0f] transition-transform duration-150 will-change-transform"
+            style={{
+              transform: `perspective(1100px) rotateX(${(holoPos.y - 50) / 10}deg) rotateY(${(50 - holoPos.x) / 10}deg)`,
+              background: `linear-gradient(135deg, #ffffff 0%, #f8fafc 45%, #eef2ff 100%)`,
+            }}
+          >
+            <div
+              className="absolute inset-0 opacity-25 mix-blend-lighten"
+              style={{
+                background: `radial-gradient(circle at ${holoPos.x}% ${holoPos.y}%, rgba(255,49,49,0.45), rgba(14,165,233,0.28), rgba(16,185,129,0.32))`,
+              }}
+            />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_12px_12px,#ef4444_2px,transparent_2px)] opacity-15" />
+            <div className="relative p-6 space-y-5">
+              <div className="flex items-center justify-between text-[11px] font-semibold uppercase tracking-[0.28em]">
+                <span>benchmarks</span>
+                <span className="h-[6px] w-16 bg-black" />
+              </div>
+              <div className="text-4xl leading-tight font-black uppercase tracking-tight space-y-1">
+                <span className="text-[#ff3131] block">Just</span>
+                <span className="block">A</span>
+                <span className="block">Noraml Human</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="h-14 w-14 bg-[#ff3131] shadow-[6px_6px_0_#0a0a0f] rotate-[2deg]" />
+                <div className="flex-1 text-xs font-mono uppercase tracking-[0.32em] leading-5">
+                  Intel · ASU · Vision Pipelines
+                </div>
+              </div>
+              <div className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.24em]">
+                <span className="h-[10px] w-[10px] bg-black" />
+                <span className="flex-1 h-[3px] bg-black" />
+                <span className="text-[#ff3131]">Latency ↓</span>
+                <span className="text-[#0ea5e9]">Throughput ↑</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
