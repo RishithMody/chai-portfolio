@@ -13,7 +13,7 @@ const HeroSection = () => {
     {
       title: 'Something called... Hercules',
       subtitle: 'coming soon',
-      href: '#home',
+      href: 'mailto:rishithmody@gmail.com?subject=Hercules',
       tag: 'reach out',
     },
     {
