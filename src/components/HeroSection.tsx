@@ -17,8 +17,8 @@ const HeroSection = () => {
       tag: 'reach out',
     },
     {
-      title: 'cOMing S00n',
-      subtitle: 'coming soon',
+      title: 'dont know',
+      subtitle: 'maybe something',
       href: '#home',
       tag: 'coming soon',
     },
