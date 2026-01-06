@@ -20,6 +20,7 @@ const HeroSection = () => {
       title: 'cOMing S00n',
       subtitle: 'coming soon',
       href: '#home',
+      tag: 'coming soon',
     },
   ];
 
