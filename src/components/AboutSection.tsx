@@ -9,9 +9,14 @@ const skills = [
 ];
 
 const experiences = [
+  {
+    company: 'Enterprise Technology',
+    role: 'Platform Systems Engineer (March 2026 - Present)',
+    description: 'DevOps and Automation Engineer for the Enterprise Technology team, responsible for building and maintaining the platform infrastructure for the company.',
+  },
   { 
     company: 'Intel Corporation', 
-    role: 'Benchmark Performance Intern (May 2025 - Present)',
+    role: 'Benchmark Performance Intern (May 2025 - Dec 2025)',
     description: 'Built benchmarking pipelines for CPUs/GPUs/AI accelerators using GStreamer, OpenCV, ONNX Runtime, PyTorch, and TensorRT; optimized inference via quantization (FP32/BF16/INT8) and vLLM/AMD Quark; performed real-time system analysis with rt-tests and tuning patches.',
   },
   { 
