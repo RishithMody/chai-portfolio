@@ -130,9 +130,9 @@ const HeroSection = () => {
                 <span className="h-[6px] w-16 bg-black" />
               </div>
               <div className="text-4xl leading-tight font-black uppercase tracking-tight space-y-1">
-                <span className="text-[#ff3131] block">Just</span>
-                <span className="block">A</span>
-                <span className="block">Noraml Human</span>
+                <span className="text-[#ff3131] block">I</span>
+                <span className="block">am</span>
+                <span className="block">the BEST</span>
               </div>
               <div className="flex items-center gap-4">
                 <div className="h-14 w-14 bg-[#ff3131] shadow-[6px_6px_0_#0a0a0f] rotate-[2deg]" />
