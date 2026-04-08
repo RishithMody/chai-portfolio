@@ -156,7 +156,8 @@ const HeroSection = () => {
         <p className="text-xl md:text-2xl font-display flex justify-center">
           <Typewriter 
             words={[
-              'benchmark performance intern @ Intel',
+              'platform systems engineer @ Enterprise Technology',
+              'prev. @ Intel',
               'cs @ Arizona State University',
             ]}
             typingSpeed={80}
