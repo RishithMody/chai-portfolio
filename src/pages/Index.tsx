@@ -4,7 +4,7 @@ import AboutSection from '@/components/AboutSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import PhotosSection from '@/components/PhotosSection';
 import ContactSection from '@/components/ContactSection';
-import PixelGrid from '@/components/PixelGrid';
+import GitHubSection from '@/components/GitHubSection';
 
 const Index = () => {
   return (
@@ -13,7 +13,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <AboutSection />
-        <PixelGrid />
+        <GitHubSection />
         <ProjectsSection />
         <PhotosSection />
         <ContactSection />
